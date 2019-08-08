@@ -94,7 +94,7 @@ def addXCodeProjRefs(srcPath,dstDir,projectPath = '/targetName.xcodeproj',target
 	group.files.each do |fileRef|
 		puts fileRef.real_path.to_s
 		if fileRef.real_path.to_s.end_with?(fileName) then
-			# remove
+			# remove same ref
 			removeRefs.push(fileRef)
 		end
 	end
@@ -139,3 +139,11 @@ ARGV.each.with_index do |param, index|
 	end
 end
 addXCodeProjRefs(ARGV[0],ARGV[1],ARGV[2],targets)
+
+
+# Command Example 
+# ruby \
+# /Users/huweitao/Desktop/XCodeAddReference/XCodeAddRef.rb \
+# /Users/huweitao/Desktop/Info.plist /Users/huweitao/Desktop/XCodeAddReference/DemoProject/Settings 
+# /Users/huweitao/Desktop/XCodeAddReference/DemoProject/DemoProject.xcodeproj \
+# DemoProject DemoProjectDev
