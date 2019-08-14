@@ -6,14 +6,6 @@ $LOAD_PATH.unshift($CurPath)
 
 $PodInstallLogsPath = File.join($CurPath,'PodInatallLogs')
 
-def cache_podinstall_logs(projectPath)
-	# run pod install and store logs
-    Dir.chdir(projectPath)
-    puts "Ruby run Pod install..."
-    system("pwd")
-    system("pod install --verbose > #{$PodInstallLogsPath}")
-end
-
 # tips: make sure that you can use xcode to build workspace with no errors!
 def get_workspacebuild_dir(appname,config,projectPath)
 	# config='Release'
